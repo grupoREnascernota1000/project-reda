@@ -1,0 +1,573 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff; /* Textos em branco */
+    line-height: 1.6;
+    background-color: #1c1c1c;
+}
+
+header {
+    position: absolute; /* Para que a barra de navegação sobreponha a imagem */
+    width: 100%;
+    top: 0;
+    z-index: 10; /* Para garantir que fique acima do conteúdo */
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: transparent; /* Remove o fundo preto */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: purple; /* roxo ao passar o mouse */
+}
+
+#Fundo {
+    background: linear-gradient(rgba(28,28,28,0.7), rgba(28,28,28,0.7)), url(images/background.jpg) no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+
+}
+
+#Fundo h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#Fundo p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.cta {
+    background-color: #1E3A5F; /* Cor chamativa */
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    border-radius: 50px;
+}
+
+.cta:hover {
+    background-color: purple; /* Cor mais intensa no hover */
+}
+
+#services {
+    padding: 3rem 0;
+    background-color: #1c1c1c;
+    text-align: center;
+}
+
+/*Aqui é o cronometro*/
+#countdown-timer {
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Arial', sans-serif;
+}
+
+.promotion-title{
+    color: orange;
+}
+
+.minimal-timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os itens */
+    font-size: 18px; /* Tamanho base da fonte */
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0; /* Fundo leve */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px 15px; /* Espaçamento interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.time-unit span:first-child {
+    font-size: 36px; /* Tamanho maior para os números */
+    color: #333; /* Cor do número */
+    font-weight: bold; /* Negrito para destaque */
+}
+
+.time-unit span:last-child {
+    font-size: 14px; /* Tamanho menor para abreviações */
+    color: #777; /* Cor mais suave para as abreviações */
+    text-transform: uppercase; /* Transforma as letras em maiúsculas */
+}
+
+/* Estilo para o preço original (riscado) */
+.original-price {
+    color: gray; /* Cor do preço original */
+    text-decoration: line-through; /* Aplica o risco no preço original */
+    margin-right: 10px; /* Adiciona um espaço entre os dois preços */
+}
+
+/* Estilo para o preço promocional (visível e destacado) */
+.promo-price {
+    color: red; /* Cor do preço promocional */
+    font-weight: bold; /* Deixa o preço promocional em negrito */
+}
+
+#services h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: white; /* Cor chamativa para o título */
+}
+
+.service-box {
+    display: flex;
+justify-content: space-around;
+margin: 0 auto;
+width: 80%;
+flex-wrap: wrap;
+}
+
+.service-item {
+    background: linear-gradient(135deg, 
+        rgb(255, 223, 186) 0%,  /* Dourado suave no início */
+        rgb(255, 215, 0) 100%); /* Dourado mais intenso ao final */
+    
+    background-size: 200% 200%; /* Para permitir o efeito de movimento */
+    animation: shine 3s linear infinite; /* Animação contínua */
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    margin: 10px;
+    /* Efeito de brilho ao redor da borda */
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.7), 
+                0 0 20px rgba(255, 215, 0, 0.5), 
+                0 0 30px rgba(255, 215, 0, 0.3); 
+
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animação de movimento do gradiente */
+@keyframes shine {
+    0% {
+        background-position: 0% 0%; /* Começa no canto superior esquerdo */
+    }
+    50% {
+        background-position: 100% 100%; /* Move para o canto inferior direito */
+    }
+    100% {
+        background-position: 0% 0%; /* Volta ao canto superior esquerdo */
+    }
+}
+
+.service-item:hover {
+    background-color: #067f92; /* Laranja ao passar o mouse */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.service-item h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.service-item p {
+    margin-bottom: 20px;
+    color: black;
+}
+
+.service-item button {
+    border-radius: 50px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.service-item button:hover {
+    background-color: #ffffff; 
+    color: white;
+}
+
+.whatsapp-link {
+    color: white;
+}
+
+#faq {
+    background-color: #f4f4f4; /* Fundo suave */
+    padding: 40px 20px; 
+    text-align: center;
+}
+
+#faq h2 {
+    color: white; /* Azul escuro */
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.faq-container {
+    max-width: 800px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza */
+}
+
+.faq-item {
+    background: white; /* Fundo branco para as perguntas */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin: 10px 0;
+    overflow: hidden; /* Para ocultar conteúdo em expansão */
+    transition: transform 0.3s ease; /* Efeito de transição */
+}
+
+.faq-item:hover {
+    transform: translateY(-5px); /* Levanta a caixa ao passar o mouse */
+}
+
+.faq-question {
+    padding: 15px; /* Espaçamento interno */
+    cursor: pointer; /* Mão ao passar o mouse */
+    font-size: 1.2rem;
+    background-color: #2c3e50; /* Azul escuro para o título */
+    color: white; /* Texto branco */
+}
+
+.faq-answer {
+    padding: 15px;
+    display: none; /* Escondido inicialmente */
+    background-color: #ecf0f1; /* Fundo claro para resposta */
+    color: #34495e; /* Cinza escuro */
+}
+#faq {
+    background-image: url('images/dúvidasfaq.jpg'); /* Caminho da imagem */
+    background-size: cover; /* Cobre toda a seção */
+    background-position: center; /* Centraliza a imagem */
+}
+
+
+
+/* Estilo da seção de vendas do pack */
+#pack-venda {
+    background-color: white;
+    padding: 50px 20px;
+    text-align: center;
+    
+}
+
+.pack-container {
+    background-color: #fff; /* Fundo branco */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    max-width: 600px;
+    margin: 0 auto; /* Centraliza o container */
+}
+
+#pack-venda h2 {
+    font-size: 2.5rem;
+    color: #333; /* Título em cinza escuro */
+    margin-bottom: 20px;
+}
+
+#pack-venda p {
+    font-size: 1.2rem;
+    color: #666; /* Texto descritivo em cinza */
+    margin-bottom: 20px;
+}
+
+.pricing {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 20px;
+}
+
+.price-old {
+    font-size: 1.5rem;
+    color: #999; /* Preço antigo em cinza claro */
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+.price-new {
+    font-size: 2rem;
+    color: #ff4b2b; /* Vermelho chamativo para o preço promocional */
+    font-weight: bold;
+}
+
+.buy-now {
+    background-color: #ff4b2b; /* Botão vermelho chamativo */
+    color: white;
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-now:hover {
+    background-color: #652dc6; /* Vermelho mais escuro no hover */
+}
+
+.limited-offer {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #ff4b2b;
+    font-style: italic;
+}
+
+#about {
+    padding: 3rem 0;
+    background-color: #1c1c1c;
+    text-align: center;
+}
+
+#about h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: white /* Laranja chamativo */
+}
+
+#about p {
+    width: 60%;
+    margin: 0 auto;
+    font-size: 1.2rem;
+}
+
+#about {
+    padding: 3rem 0;
+    background-color: #1c1c1c;
+    text-align: left;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Permite que o conteúdo se reorganize em telas menores */
+}
+
+.about-text {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.about-image img {
+    max-width: 100%; /* A imagem nunca será maior que o container pai */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px;
+}
+
+#contact {
+    padding: 3rem 0;
+    background-color: rgb(169, 87, 169);
+    text-align: center;
+}
+
+#contact h2 {
+    margin-bottom: 2rem;
+    color: white;
+}
+
+#contact form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+#contact label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+}
+
+#contact button {
+    padding: 10px 20px;
+    background-color: #ff9800; /* Laranja */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: #e68900; /* Laranja mais escuro no hover */
+}
+
+footer {
+    background-color: #1c1c1c; /* Preto escuro */
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.social-icons {
+    margin-bottom: 20px; /* Espaçamento entre ícones e texto */
+}
+
+.social-icon {
+    border-radius: 50px;
+    width: 35px; /* Tamanho reduzido da imagem */
+    height: 35px; /* Mantém a proporção das imagens */
+    margin: 0 15px; /* Espaçamento entre os ícones */
+    opacity: 0.9; /* Torna a imagem um pouco transparente */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Efeito de transição */
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Efeito de aumento ao passar o mouse */
+    opacity: 1; /* Torna a imagem totalmente opaca ao passar o mouse */
+}
+
+/* Adicione uma mídia query para ajustar o layout em dispositivos móveis */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Coloca o texto e a imagem em coluna em vez de lado a lado */
+        text-align: center; /* Centraliza o conteúdo em telas pequenas */
+    }
+
+    .about-text {
+        margin-right: 0; /* Remove o espaço lateral em telas pequenas */
+    }
+
+    .about-image img {
+        max-width: 80%; /* Reduz a largura da imagem para 80% da tela em dispositivos móveis */
+        margin: 20px 0; /* Adiciona espaçamento ao redor da imagem */
+    }
+}
+
+@media (max-width: 768px) {
+    .service-item {
+        width: 100%; /* Faz as caixas ocuparem toda a largura em telas menores */
+        
+        
+margin: 10px 0; /* Margem vertical para espaçamento */
+    }
+}
+
+/* Estilos da seção de vendas do pack */
+#pagepack-venda {
+    padding: 50px 20px;
+    text-align: center;
+    background-image: url('images/fundopacotehtml.jpg'); /* Imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center; /* Mantém a imagem centralizada */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    color: #000000; /* Texto em tom claro */
+    min-height: 100vh; /* Garante que a seção ocupe a altura completa da tela */
+}
+
+.pack-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #FFD700; /* Cor dourada para o título */
+}
+
+.pack-description {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #000000; /* Cinza claro para a descrição */
+}
+
+.redacao-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.redacao-item {
+    background-color: rgba(15, 23, 42, 0.85); /* Fundo escuro com opacidade para contraste */
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.redacao-item:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+.redacao-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00BFFF; /* Azul claro para o título */
+}
+
+.redacao-description {
+    font-size: 1rem;
+    color: #B0C4DE; /* Azul claro para descrição */
+}
+
+.buy-now {
+    background-color: #1E90FF; /* Azul vibrante para o botão */
+    color: white;
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.buy-now:hover {
+    background-color: #4682B4; /* Azul mais escuro no hover */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .redacao-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .redacao-item {
+        width: 80%;
+    }
+}
+

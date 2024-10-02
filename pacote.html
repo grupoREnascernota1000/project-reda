@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Em Produção</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            text-align: center;
+            background-image: url('images/space.jpg'); /* Background sugerido */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Nav */
+        nav {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .btn-voltar {
+            text-decoration: none;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 12px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .btn-voltar:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Texto centralizado */
+        h1 {
+            font-size: 2.5em;
+            letter-spacing: 1.5px;
+            position: relative;
+            z-index: 5;
+            opacity: 0.9;
+        }
+
+        .dots {
+            display: inline-block;
+            width: 30px;
+            text-align: left;
+        }
+
+        /* Efeito de carregamento da frase */
+        @keyframes loadingDots {
+            0% { content: ''; }
+            25% { content: '.'; }
+            50% { content: '..'; }
+            75% { content: '...'; }
+            100% { content: ''; }
+        }
+
+        /* Animação das reticências */
+        .dots::after {
+            content: '';
+            animation: loadingDots 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="btn-voltar">Voltar para o Início</a>
+    </nav>
+
+    <main>
+        <h1>Em produção<span class="dots"></span></h1>
+    </main>
+</body>
+</html>
