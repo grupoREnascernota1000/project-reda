@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Função para o cronômetro
-const countdownDate = new Date("Oct 27, 2024 23:59:59").getTime();
+const countdownDate = new Date("Oct 26, 2024 23:59:59").getTime();
 
 const countdownFunction = setInterval(function () {
     const now = new Date().getTime();
